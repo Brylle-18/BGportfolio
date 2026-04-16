@@ -8,37 +8,42 @@
     the button then will have an animation of extending to its 
     right or left then pushes towards the edge of it that makes
     it look like a bow and arrow. -->
-
+    
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./dist/output.css" rel="stylesheet">
+  <title>Brylle Garcia | Portfolio</title>
+  <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="nav-bar" id="navbar">
-  <div class="nav-content">
-    <a class="brand-container">
-      <img src="bg.png" alt="logo" class="brand-logo">
-      <span class="brand-name">Brylle Garcia</span>
-    </a>
 
-    <div class="island-info">
-      <span id="current-time">12:00 PM</span>
+  <nav class="nav-bar" id="dynamicNav">
+    <div class="nav-container">
+      <a class="brand-container" href="#">
+        <img src="bg.png" alt="logo" class="brand-logo">
+        <span class="brand-name">Brylle Garcia</span>
+      </a>
+
+      <div class="island-info" id="time-display">12:00 PM</div>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#resume" class="resume-btn">Resume</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <ul class="nav-links">
-      <li><a href="#">About</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Resume</a></li>
-    </ul>
-  </div>
-</nav>
+  <main class="main-content">
+    <section class="hero">
+      <h1>Brylle Garcia</h1>
+      <p>About me</p>
+    </section>
+  </main>
 
-<div style="height: 200vh; padding: 100px;">
-  <h1>Scroll down to see the magic ✨</h1>
-</div>
+  <script src="script.js"></script>
 </body>
 </html>
