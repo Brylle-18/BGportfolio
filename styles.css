@@ -6,8 +6,8 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #f5f5f7;
-  color: #1d1d1f;
+  background-color: #1A1A1A;
+  color: #FF8C00;
 }
 
 .nav-bar {
@@ -18,16 +18,17 @@ body {
   width: 90%;
   max-width: 1000px;
   height: 64px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(30, 30, 30, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 2px solid rgba(255, 140, 0, 0.5);
   border-radius: 20px;
   display: flex;
   align-items: center;
   padding: 0 24px;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 9999;
+  box-shadow: 0 8px 32px rgba(255, 140, 0, 0.2), 0 0 16px rgba(255, 140, 0, 0.1);
 }
 
 .nav-container {
@@ -41,11 +42,12 @@ body {
 .nav-bar.scrolled {
   width: 200px; 
   height: 38px;
-  background: #000;
+  background: #0F0F0F;
   border-radius: 40px;
-  color: #fff;
+  color: #FF8C00;
   padding: 0 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border: 2px solid #FF8C00;
+  box-shadow: 0 10px 40px rgba(255, 140, 0, 0.4), 0 0 20px rgba(255, 140, 0, 0.2);
 }
 
 /* Hide elements when in Island mode */
@@ -54,9 +56,9 @@ body {
   display: none;
 }
 
-/* Invert logo color for black background */
+/* Adjust logo color for dark background */
 .nav-bar.scrolled .brand-logo {
-  filter: invert(1);
+  filter: brightness(1.2) hue-rotate(10deg);
   height: 32px;
 }
 .nav-bar:hover .brand-logo{
@@ -79,7 +81,8 @@ body {
 .nav-bar.scrolled:hover {
   width: 520px; /* Expands to show links */
   height: 55px;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(30, 30, 30, 0.98);
+  box-shadow: 0 10px 40px rgba(255, 140, 0, 0.4), 0 0 20px rgba(255, 140, 0, 0.2);
 }
 
 .nav-bar.scrolled:hover .nav-links {
@@ -123,7 +126,7 @@ body {
 
 .nav-links a:hover::after {
   opacity: 1;
-  right: -25px; 
+  right: -15px; 
 }
 
 .brand-container {
@@ -151,7 +154,9 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
+.hero {
+  text-align: center;
+}
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 20px;
@@ -159,4 +164,10 @@ body {
 
 .hero p {
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.hero span {
+  font-size: 1.7em;
+  font-family: 'Times New Roman', Times, serif;
 }
