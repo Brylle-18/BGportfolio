@@ -114,6 +114,7 @@ body {
 /* --- Bow & Arrow Animation --- */
 .nav-links a:hover {
   transform: translateX(-4px);
+  color:#f0a346;
 }
 
 .nav-links a::after {

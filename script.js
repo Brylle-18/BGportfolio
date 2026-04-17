@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 1. Detect Scroll Position
   window.addEventListener('scroll', () => {
-    // If user scrolls more than 60px from the top
-    if (window.scrollY > 60) {
+    // If user scrolls more than 100px from the top
+    if (window.scrollY > 100) {
       nav.classList.add('scrolled');
     } else {
       nav.classList.remove('scrolled');
