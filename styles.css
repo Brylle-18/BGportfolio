@@ -157,9 +157,31 @@ body {
 }
 
 .about-section {
+  position: relative;
   width: min(1100px, 90%);
   margin: 80px auto 0;
   padding: 48px 0;
+}
+
+#fallingWordsContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.falling-word {
+  position: absolute;
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  color: #FFD700;
+  white-space: nowrap;
+  user-select: none;
+  filter: blur(0.5px); /* Slight blur for softness */
 }
 
 .about-grid {
@@ -183,6 +205,11 @@ body {
   font-weight: 700;
 }
 
+.letter.space {
+  width: 0.4em;
+  display: inline-block;
+}
+
 .about-name h2 {
   position: relative;
   font-size: clamp(3.5rem, 5vw, 5.5rem);
@@ -190,6 +217,7 @@ body {
   letter-spacing: -0.04em;
   color: #FF8C00;
   font-weight: 900;
+  font-family: 'SF Pro Display', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
   text-shadow: 0 0 24px rgba(255, 140, 0, 0.22);
   animation: nameGlow 3s ease-in-out infinite;
   transition: all 0.3s ease;
@@ -203,50 +231,6 @@ body {
 .letter {
   position: relative;
   display: inline-block;
-  animation: letterLight 2s ease-in-out infinite;
-}
-
-.letter:nth-child(1) { animation-delay: 0s; }
-.letter:nth-child(2) { animation-delay: 0.15s; }
-.letter:nth-child(3) { animation-delay: 0.3s; }
-.letter:nth-child(4) { animation-delay: 0.45s; }
-.letter:nth-child(5) { animation-delay: 0.6s; }
-.letter:nth-child(6) { animation-delay: 0.75s; }
-.letter:nth-child(7) { animation-delay: 0.9s; }
-.letter:nth-child(8) { animation-delay: 1.05s; }
-.letter:nth-child(9) { animation-delay: 1.2s; }
-.letter:nth-child(10) { animation-delay: 1.35s; }
-.letter:nth-child(11) { animation-delay: 1.5s; }
-.letter:nth-child(12) { animation-delay: 1.65s; }
-.letter:nth-child(13) { animation-delay: 1.8s; }
-
-.letter::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 50% 30%, rgba(255, 212, 135, 0.2), transparent 50%);
-  filter: blur(4px);
-  opacity: 0;
-  pointer-events: none;
-  animation: letterGlow 2s ease-in-out infinite;
-}
-
-@keyframes letterLight {
-  0%, 80%, 100% { opacity: 1; }
-  40% { opacity: 0.8; }
-}
-
-@keyframes letterGlow {
-  0%, 80%, 100% { opacity: 0; }
-  40% { opacity: 0.4; }
-}
-
-.about-name h2:hover::after {
-  opacity: 1;
-  animation: lightPulseHover 2s ease-in-out infinite;
 }
 
 @keyframes nameGlow {
@@ -257,16 +241,6 @@ body {
 @keyframes nameGlowHover {
   0%, 100% { text-shadow: 0 0 32px rgba(255, 140, 0, 0.35); }
   50% { text-shadow: 0 0 40px rgba(255, 140, 0, 0.45); }
-}
-
-@keyframes lightPulse {
-  0%, 100% { opacity: 0.75; transform: scale(1); }
-  50% { opacity: 0.9; transform: scale(1.02); }
-}
-
-@keyframes lightPulseHover {
-  0%, 100% { opacity: 1; transform: scale(1.05); }
-  50% { opacity: 1; transform: scale(1.08); }
 }
 
 .about-intro {
