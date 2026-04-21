@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
           word.y = -50;
           word.x = Math.random() * (window.innerWidth - 150);
           word.speed = Math.random() * 1 + 0.5;
-          word.opacity = Math.random() * 0.07 + 0.03;
+          word.opacity = Math.random() * 0.09 + 0.05;
           word.fadeIn = 0;
         }
 
