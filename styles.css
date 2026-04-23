@@ -163,6 +163,80 @@ body {
   padding: 48px 0;
 }
 
+.certification-section {
+  width: min(1100px, 90%);
+  margin: 80px auto 0;
+  padding: 48px 0;
+}
+
+.certification-container h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.1;
+  color: #FF8C00;
+  font-weight: 900;
+  font-family: 'SF Pro Display', 'Helvetica Neue', -apple-system, BlinkMacFont, sans-serif;
+  margin-bottom: 16px;
+  text-shadow: 0 0 20px rgba(255, 140, 0, 0.2);
+}
+
+.certification-subtitle {
+  color: #E3B071;
+  max-width: 700px;
+  margin-bottom: 32px;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.certification-card {
+  background: rgba(30, 30, 30, 0.85);
+  border: 1px solid rgba(255, 140, 0, 0.25);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.certification-card h3 {
+  color: #FFB951;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+}
+
+.certification-card p {
+  color: #E3B071;
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.certification-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: #FF8C00;
+  color: #111;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.certification-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(255, 140, 0, 0.35);
+}
+
+@media (max-width: 860px) {
+  .certification-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 #fallingWordsContainer {
   position: fixed;
   top: 0;
