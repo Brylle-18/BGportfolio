@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('dynamicNav');
   const timeBox = document.getElementById('time-display');
+  const mainContent = document.querySelector('main');
 
   // 1. Detect Scroll Position
   window.addEventListener('scroll', () => {
@@ -29,6 +30,48 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(updateClock, 1000);
   updateClock();
 
+  // Scroll-reveal text animation
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealSelector = [
+    '.section-label',
+    'main h2',
+    'main h3',
+    'main p',
+    'main a'
+  ].join(', ');
+
+  const revealElements = mainContent
+    ? Array.from(mainContent.querySelectorAll(revealSelector)).filter((element) => {
+        return !element.closest('.about-image, .certification-image-wrap');
+      })
+    : [];
+
+  revealElements.forEach((element, index) => {
+    element.classList.add('scroll-reveal');
+    element.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 90}ms`);
+  });
+
+  if (prefersReducedMotion) {
+    revealElements.forEach((element) => element.classList.add('is-visible'));
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.18,
+        rootMargin: '0px 0px -10% 0px'
+      }
+    );
+
+    revealElements.forEach((element) => revealObserver.observe(element));
+  }
+
   // Falling words effect
   const container = document.getElementById('fallingWordsContainer');
   const words = [
@@ -47,8 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const fallingWords = [];
 
   // Check for reduced motion preference
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   function createFallingWord() {
     const word = words[Math.floor(Math.random() * words.length)];
     const element = document.createElement('div');
