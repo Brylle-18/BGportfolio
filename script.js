@@ -123,24 +123,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Scroll-reveal text animation
+  // Scroll-reveal animation
   const revealSelector = [
-    '.section-label',
-    'main h2',
-    'main h3',
-    'main p',
-    'main a'
+    '.home-copy > *',
+    '.home-panel',
+    '.about-name > *',
+    '.about-image',
+    '.certification-container > .section-label',
+    '.certification-container > h2',
+    '.certification-container > .certification-subtitle',
+    '.certification-card',
+    '.contact-container > .section-label',
+    '.contact-container > h2',
+    '.contact-container > .contact-subtitle',
+    '.contact-link',
+    '.site-footer p'
   ].join(', ');
 
   const revealElements = mainContent
-    ? Array.from(mainContent.querySelectorAll(revealSelector)).filter((element) => {
-        return !element.closest('.about-image, .certification-image-wrap');
-      })
+    ? Array.from(document.querySelectorAll(revealSelector))
     : [];
 
   revealElements.forEach((element, index) => {
     element.classList.add('scroll-reveal');
     element.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 90}ms`);
+
+    if (element.matches('.home-panel, .about-image')) {
+      element.classList.add('reveal-right');
+    } else if (element.matches('.contact-link, .certification-card')) {
+      element.classList.add('reveal-up');
+    } else {
+      element.classList.add('reveal-left');
+    }
   });
 
   if (prefersReducedMotion) {

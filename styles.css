@@ -10,6 +10,35 @@ body {
   color: #FF8C00;
 }
 
+.scroll-reveal {
+  opacity: 0;
+  filter: blur(10px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease,
+    filter 0.7s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform, filter;
+}
+
+.scroll-reveal.reveal-left {
+  transform: translate3d(-28px, 0, 0);
+}
+
+.scroll-reveal.reveal-right {
+  transform: translate3d(28px, 0, 0);
+}
+
+.scroll-reveal.reveal-up {
+  transform: translate3d(0, 28px, 0);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0);
+}
+
 .nav-bar {
   position: fixed;
   top: 20px;
