@@ -1,21 +1,9 @@
-<!-- // Design ideas 
-// 1. Make the nav bar a dynamic island similar to iphones. 
-    when the user scrolls down the dynamic island compress and 
-    shows only the logo and date, time. when the user hovers
-    over the dynamic island it expands and shows the nav bars.
-
-    2. when the user hovers over any button like components 
-    the button then will have an animation of extending to its 
-    right or left then pushes towards the edge of it that makes
-    it look like a bow and arrow. -->
-
-    
-<!doctype html>
+  <!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brylle Garcia | Portfolio</title>
+  <title>Brylle Garcia | Personal Portfolio</title>
   <link href="styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -49,11 +37,22 @@
       <div class="home-grid">
         <div class="home-copy">
           <p class="section-label">Home</p>
-          <h1>Building a future in software development and cybersecurity.</h1>
-          <p class="home-intro">
-            I am Brylle Garcia, an aspiring developer focused on creating clean web experiences,
-            growing real-world coding skills, and exploring the security mindset behind modern tech.
-          </p>
+          <h1>Learning, one idea at a time.</h1>
+          <div class="quote-rotator" aria-live="polite">
+            <p class="home-intro quote-text" id="quoteText">
+              "The beautiful thing about learning is that no one can take it away from you."
+            </p>
+            <p class="quote-author" id="quoteAuthor">B.B. King</p>
+            <div class="quote-controls" aria-label="Quote controls">
+              <button type="button" class="quote-control" id="quotePrev" aria-label="Show previous quote">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+              </button>
+              <div class="quote-dots" id="quoteDots" aria-label="Quote navigation"></div>
+              <button type="button" class="quote-control" id="quoteNext" aria-label="Show next quote">
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
           <div class="home-actions">
             <a href="#about" class="home-button home-button-primary">Explore Profile</a>
             <a href="#contact" class="home-button home-button-secondary">Get In Touch</a>
@@ -61,20 +60,13 @@
         </div>
 
         <div class="home-panel">
-          <div class="home-panel-block">
-            <span class="home-panel-label">Current Focus</span>
-            <p>Frontend development, responsive design, and cybersecurity fundamentals.</p>
-          </div>
-          <div class="home-panel-block">
-            <span class="home-panel-label">What I Bring</span>
-            <p>Curiosity, discipline, and a strong drive to keep learning through hands-on projects.</p>
-          </div>
+          <span class="home-panel-label">Mindset</span>
+          <p>I keep this space simple: a few words worth returning to, and a reminder to keep learning with consistency.</p>
           <div class="home-tags" aria-label="Core strengths">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Responsive Design</span>
-            <span>Cybersecurity</span>
+            <span>Learning</span>
+            <span>Discipline</span>
+            <span>Simplicity</span>
+            <span>Dedication</span>
           </div>
         </div>
       </div>

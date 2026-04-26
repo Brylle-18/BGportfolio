@@ -188,7 +188,7 @@ body {
 
 /* Keep the hover arrow inside the expanded island. */
 .nav-links a::after {
-  content: '->';
+  content: '→';
   right: -2px;
 }
 
@@ -212,38 +212,116 @@ body {
 
 .home-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
-  gap: 32px;
-  align-items: stretch;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 280px);
+  gap: 28px;
+  align-items: start;
 }
 
 .home-copy {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
 .home-copy h1 {
-  font-size: clamp(3rem, 6vw, 5.4rem);
-  line-height: 0.98;
+  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  line-height: 1.02;
   color: #FFB951;
   font-weight: 900;
   font-family: 'SF Pro Display', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
-  text-shadow: 0 0 28px rgba(255, 140, 0, 0.22);
-  max-width: 11ch;
+  text-shadow: 0 0 18px rgba(255, 140, 0, 0.16);
+  max-width: 9ch;
 }
 
 .home-intro {
-  max-width: 640px;
+  max-width: 680px;
   color: #E7BE82;
-  line-height: 1.8;
+  line-height: 1.7;
   font-size: 1.08rem;
+}
+
+.quote-rotator {
+  display: grid;
+  gap: 14px;
+  max-width: 720px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.quote-text {
+  min-height: 120px;
+  margin: 0;
+  font-size: clamp(1.3rem, 2.2vw, 1.85rem);
+  line-height: 1.55;
+  color: #FFD59A;
+  font-weight: 500;
+}
+
+.quote-author {
+  margin: 0;
+  color: #FFB951;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.quote-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.quote-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 140, 0, 0.25);
+  border-radius: 999px;
+  background: transparent;
+  color: #FFD59A;
+  cursor: pointer;
+  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.quote-control:hover {
+  transform: translateY(-2px);
+  background: #FF8C00;
+  color: #111;
+  border-color: #FF8C00;
+}
+
+.quote-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.quote-dot {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 185, 81, 0.28);
+  cursor: pointer;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.quote-dot:hover,
+.quote-dot.active {
+  background: #FF8C00;
+  transform: scale(1.15);
 }
 
 .home-actions { 
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  padding-top: 4px;
 }
 
 .home-button {
@@ -286,45 +364,39 @@ body {
 
 .home-panel {
   display: grid;
-  gap: 18px;
-  padding: 28px;
-  border-radius: 24px;
-  background: rgba(30, 30, 30, 0.85);
-  border: 1px solid rgba(255, 140, 0, 0.25);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
-}
-
-.home-panel-block {
-  display: grid;
-  gap: 8px;
+  gap: 14px;
+  padding: 0 0 0 24px;
+  border-left: 1px solid rgba(255, 140, 0, 0.2);
+  align-content: start;
 }
 
 .home-panel-label {
   color: #F8D49E;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
   font-weight: 700;
 }
 
 .home-panel p {
   color: #E3B071;
-  line-height: 1.75;
+  line-height: 1.7;
+  font-size: 0.98rem;
 }
 
 .home-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .home-tags span {
-  padding: 10px 14px;
+  padding: 8px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 140, 0, 0.28);
-  color: #FFD59A;
-  background: rgba(255, 140, 0, 0.08);
-  font-size: 0.9rem;
+  border: 1px solid rgba(255, 140, 0, 0.18);
+  color: #F6C784;
+  background: transparent;
+  font-size: 0.84rem;
   font-weight: 600;
 }
 
@@ -426,6 +498,23 @@ body {
   border: 1px solid #FF8C00;
 }
 
+
+.certification-link {
+  gap: 0;
+  position: relative;
+}
+
+.certification-link::after {
+  content: '->';
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.certification-link:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
 
 .certification-image-wrap {
   position: relative;
@@ -776,8 +865,28 @@ body {
     padding-top: 36px;
   }
 
+  .home-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
   .home-copy h1 {
     font-size: clamp(2.5rem, 11vw, 4rem);
+  }
+
+  .quote-rotator {
+    gap: 12px;
+  }
+
+  .quote-text {
+    min-height: 0;
+    font-size: clamp(1.2rem, 6vw, 1.55rem);
+  }
+
+  .home-panel {
+    padding: 18px 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(255, 140, 0, 0.2);
   }
 
   .home-button {
