@@ -82,16 +82,34 @@ body {
 
 /* This is for the hover state*/
 .nav-bar.scrolled:hover {
-  width: min(520px, calc(100vw - 24px)); /* Expands to show links without leaving the viewport */
+  width: min(560px, calc(100vw - 24px)); /* Expands to show links without leaving the viewport */
   height: 55px;
   background: rgba(30, 30, 30, 0.98);
   box-shadow: 0 10px 40px rgba(255, 140, 0, 0.4), 0 0 20px rgba(255, 140, 0, 0.2);
+  padding: 0 20px;
+}
+
+.nav-bar.scrolled:hover .nav-container {
+  gap: 14px;
 }
 
 .nav-bar.scrolled:hover .nav-links {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   margin-left: auto;
+  padding-right: 8px;
+}
+
+.nav-bar.scrolled:hover .brand-container {
+  margin-right: 10px;
+}
+
+.nav-bar.scrolled:hover .nav-links a {
+  padding-right: 12px;
+}
+
+.nav-bar.scrolled:hover .nav-links li:last-child a {
+  padding-right: 6px;
 }
 
 .nav-bar.scrolled:hover .island-info{
