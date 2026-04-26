@@ -26,7 +26,7 @@
 
   <nav class="nav-bar" id="dynamicNav">
     <div class="nav-container">
-      <a class="brand-container" href="#">
+      <a class="brand-container" href="#home">
         <img src="/Images/bg.png" alt="logo" class="brand-logo">
         <span class="brand-name">Brylle Garcia</span>
       </a>
@@ -34,6 +34,7 @@
       <div class="island-info" id="time-display"></div>
 
       <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#certifications">Certifications</a></li>
@@ -44,6 +45,41 @@
   </nav>
 
   <main class="main-content">
+    <section id="home" class="home-section">
+      <div class="home-grid">
+        <div class="home-copy">
+          <p class="section-label">Home</p>
+          <h1>Building a future in software development and cybersecurity.</h1>
+          <p class="home-intro">
+            I am Brylle Garcia, an aspiring developer focused on creating clean web experiences,
+            growing real-world coding skills, and exploring the security mindset behind modern tech.
+          </p>
+          <div class="home-actions">
+            <a href="#about" class="home-button home-button-primary">Explore Profile</a>
+            <a href="#contact" class="home-button home-button-secondary">Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="home-panel">
+          <div class="home-panel-block">
+            <span class="home-panel-label">Current Focus</span>
+            <p>Frontend development, responsive design, and cybersecurity fundamentals.</p>
+          </div>
+          <div class="home-panel-block">
+            <span class="home-panel-label">What I Bring</span>
+            <p>Curiosity, discipline, and a strong drive to keep learning through hands-on projects.</p>
+          </div>
+          <div class="home-tags" aria-label="Core strengths">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Responsive Design</span>
+            <span>Cybersecurity</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="about" class="about-section">
       <div class="about-grid">
         <div class="about-name">
@@ -135,6 +171,10 @@
   </div>
 </section>
   </main>   
+
+  <footer class="site-footer">
+    <p>Developed by Brylle M. Garcia | &copy; 2026</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
