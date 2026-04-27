@@ -136,8 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '.contact-container > .section-label',
     '.contact-container > h2',
     '.contact-container > .contact-subtitle',
-    '.contact-link',
-    '.site-footer p'
+    '.contact-link'
   ].join(', ');
 
   const revealElements = mainContent
